@@ -63,8 +63,8 @@ configurations {
         }
 
         if (details.requested.group.equals("io.netty") && details.requested.version.startsWith("4")) {
-          details.useVersion "4.2.7.Final"
-          details.because "Eliminating CVEs on earlier patch versions. io.netty is brought in by marklogic-data-hub. "
+          details.useVersion "4.2.15.Final"
+          details.because "MLE-30645: eliminates 38 CVEs present in 4.2.7.Final, including the DNS cache-poisoning pair CVE-2026-45674 and CVE-2026-47691 in netty-resolver-dns. io.netty is brought in transitively by marklogic-data-hub; the connector uses no Netty APIs directly. 26 further CVEs require 4.2.16.Final/4.2.17.Final and are out of scope for this ticket."
         }
       }
     }
